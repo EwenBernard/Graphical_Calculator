@@ -6,24 +6,24 @@ scaled trait Expr {
   object Expr {
     case class Number(value: Double) extends Expr
     case object Var extends Expr
-
     case class Add(left: Expr, right: Expr) extends Expr
-
     case class Mult(left: Expr, right: Expr) extends Expr
+
+
 
     /**
      * Evaluate an expression for a given value for the variable.
      *
      * eg. eval(Mult(Var, Add(Const(2), Var)))(3) => 15
      */
-    def eval(expression: Expression)(variable: Double): Double = ???
+    def eval(e: Expr)(variable: Double): Double = ???
 
     /**
      * Convert an expression to its postfix representation.
      *
      * eg. Mult(Var, Add(Const(2), Var)) => X 2 X + *
      */
-    def toPostfix(expression: Expression): String = ???
+    def toPostfix(e: Expression): String = ???
 
     /**
      * Convert an expression to its prefix representation.
