@@ -20,21 +20,21 @@ scaled trait Expr {
      *
      * eg. Mult(Var, Add(Const(2), Var)) => X 2 X + *
      */
-    def toPostfix(e: Expression): String = ???
+    def toPostfix(e: Expr): String = ???
 
     /**
      * Convert an expression to its prefix representation.
      *
      * eg. Mult(Var, Add(Const(2), Var)) => (* X (+ 2 X))
      */
-    def toPrefix(expression: Expression): String = ???
+    def toPrefix(e: Expr): String = ???
 
     /**
      * Convert an expression to its infix representation.
      *
      * eg. Mult(Var, Add(Const(2), Var)) => X * (2 + X)
      */
-    def toInfix(expression: Expression): String = ???
+    def toInfix(e: Expr): String = ???
 
     /**
      * Deriv an expression according to the variable.
@@ -43,7 +43,7 @@ scaled trait Expr {
      *  Add(Mult(Const(1.0), Add(Const(2.0), Var)),
      *      Mult(Var, Add(Const(0.0), Const(1.0))))
      */
-    def deriv(expression: Expression): Expression = ???
+    def deriv(e: Expr): Expr = ???
 
     /**
      * Bonus :
@@ -52,7 +52,7 @@ scaled trait Expr {
      *  val exp1 = Plus(Var,Const(3))
      *  polyCoef(Mult(exp1,exp1)) => Vector(9,6,1)
      */
-    def polyCoef(expression: Expression): Vector[Double] = ???
+    def polyCoef(e: Expr): Vector[Double] = ???
   }
   //def expression (entityData: String)
 
