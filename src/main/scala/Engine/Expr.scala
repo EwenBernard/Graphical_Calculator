@@ -4,14 +4,16 @@ import com.sun.org.apache.xerces.internal.impl.dv.dtd.ENTITYDatatypeValidator
 
 scaled trait Expr {
   object Expr {
-    case class Number(value: Double) extends Expr
+    case class Number(val value: Double) extends Expr
     case object Var extends Expr
-    case class Add(left: Expr, right: Expr) extends Expr
-    case class Mult(left: Expr, right: Expr) extends Expr
-    case class Sin(left: Expr, right: Expr) extends Expr
-    case class Cos(left: Expr, right: Expr) extends Expr
+    case class Add(val left: Expr, right: Expr) extends Expr
+    case class Mult(val left: Expr, right: Expr) extends Expr
+    case class Function(val name: String, val args: Expr) extends Expr //sin ou cos
 
-    def show(e : Expr): String = ???
+
+
+    def show(e : Expr): String = {
+    }
 
 
     def eval(e: Expr)(variable: Double): Double = ???
