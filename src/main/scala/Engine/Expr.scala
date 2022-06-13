@@ -8,14 +8,11 @@ scaled trait Expr {
     case object Var extends Expr
     case class Add(left: Expr, right: Expr) extends Expr
     case class Mult(left: Expr, right: Expr) extends Expr
+    case class Sin(left: Expr, right: Expr) extends Expr
+
+    def show(e : Expr): String
 
 
-
-    /**
-     * Evaluate an expression for a given value for the variable.
-     *
-     * eg. eval(Mult(Var, Add(Const(2), Var)))(3) => 15
-     */
     def eval(e: Expr)(variable: Double): Double = ???
 
     /**
