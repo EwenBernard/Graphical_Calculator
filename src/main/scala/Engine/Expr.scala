@@ -9,8 +9,9 @@ scaled trait Expr {
     case class Add(left: Expr, right: Expr) extends Expr
     case class Mult(left: Expr, right: Expr) extends Expr
     case class Sin(left: Expr, right: Expr) extends Expr
+    case class Cos(left: Expr, right: Expr) extends Expr
 
-    def show(e : Expr): String
+    def show(e : Expr): String = ???
 
 
     def eval(e: Expr)(variable: Double): Double = ???
