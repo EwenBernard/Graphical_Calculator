@@ -1,8 +1,8 @@
 package Engine
 
-import scala.util.parsing.combinator.Parsers
+import scala.util.parsing.combinator.{JavaTokenParsers, PackratParsers}
 
-object Parser extends Parsers{
+object Parser extends JavaTokenParsers with PackratParsers {
    override type Elem = ExprToken
 
   class ExprTokenReader(tokens: Seq[ExprToken])
