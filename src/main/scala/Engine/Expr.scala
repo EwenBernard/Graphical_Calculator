@@ -3,11 +3,21 @@ package Engine
 scaled trait Expr {
   object Expr {
     case class Number(val value: Double) extends Expr
-    case class Var extends Expr
-    case class Add(val left: Expr, right: Expr) extends Expr
-    case class Mult(val left: Expr, right: Expr) extends Expr
-    case class Function(val name: String, val args: Expr) extends Expr //sin ou cos
+    case class Const(val value: Double, val name: String) extends Expr
+    case class Variable(val name: String) extends Expr
 
+    // binary operators
+    case class OpAdd(val leftOp: Expr, val rightOp: Expr) extends Expr
+    case class OpSub(val leftOp: Expr, val rightOp: Expr) extends Expr
+    case class OpMul(val leftOp: Expr, val rightOp: Expr) extends Expr
+    case class OpDiv(val leftOp: Expr, val rightOp: Expr) extends Expr
+
+    // unary operators
+    case class OpUnaryPlus(val rightOp: Expr) extends Expr
+    case class OpUnaryMinus(val rightOp: Expr) extends Expr
+
+    // function
+    case class OpFun(val name: String, val args: List[Expr]) extends Expr
 
 
     def show(e : Expr): String = {
