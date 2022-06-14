@@ -1,7 +1,5 @@
 package Engine
 
-import com.sun.org.apache.xerces.internal.impl.dv.dtd.ENTITYDatatypeValidator
-
 scaled trait Expr {
   object Expr {
     case class Number(value: Double) extends Expr
