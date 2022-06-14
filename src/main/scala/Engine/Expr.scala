@@ -3,7 +3,7 @@ package Engine
 scaled trait Expr {
   object Expr {
     case class Number(val value: Double) extends Expr
-    case object Var extends Expr
+    case class Var extends Expr
     case class Add(val left: Expr, right: Expr) extends Expr
     case class Mult(val left: Expr, right: Expr) extends Expr
     case class Function(val name: String, val args: Expr) extends Expr //sin ou cos
